@@ -21,3 +21,4 @@ jobs:
 
       - name: اجرای کد
         run: python bot.py
+add workflow file
