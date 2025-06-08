@@ -1,0 +1,24 @@
+name: Run CoinEx Bot
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: دریافت کد
+      uses: actions/checkout@v3
+
+    - name: نصب پایتون
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: نصب کتابخانه‌ها
+      run: |
+        pip install ccxt pandas
+
+    - name: اجرای ربات
+      run: python bot.py
